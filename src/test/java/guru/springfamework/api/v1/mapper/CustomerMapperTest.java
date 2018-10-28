@@ -18,8 +18,8 @@ public class CustomerMapperTest {
 
         //given
         Customer customer = new Customer();
-        customer.setFirstName(FIRSTNAME);
-        customer.setLastName(LASTNAME);
+        customer.setFirstname(FIRSTNAME);
+        customer.setLastname(LASTNAME);
         customer.setId(ID);
 
         //when
@@ -27,8 +27,8 @@ public class CustomerMapperTest {
 
         //then
         assertEquals(Long.valueOf(ID), customerDTO.getId());
-        assertEquals(FIRSTNAME, customerDTO.getFirstName());
-        assertEquals(LASTNAME, customerDTO.getLastName());
+        assertEquals(FIRSTNAME, customerDTO.getFirstname());
+        assertEquals(LASTNAME, customerDTO.getLastname());
     }
     
 

@@ -48,13 +48,13 @@ public class CustomerControllerTest {
         customer1.setId(1L);
         customer1.setFirstName("Joe");
         customer1.setLastName("Dirt");
-        customer1.setOrders_url("/some/usr/order1");
+        customer1.setCustomerUrl("/some/usr/order1");
 
         CustomerDTO customer2 = new CustomerDTO();
         customer2.setId(2L);
         customer2.setFirstName("Ann");
         customer2.setLastName("Other");
-        customer2.setOrders_url("/some/url/order2");
+        customer2.setCustomerUrl("/some/url/order2");
 
         List<CustomerDTO> customers = Arrays.asList(customer1,customer2);
 
@@ -72,7 +72,7 @@ public class CustomerControllerTest {
         customer1.setId(1L);
         customer1.setFirstName("Joe");
         customer1.setLastName("Dirt");
-        customer1.setOrders_url("/some/usr/order1");
+        customer1.setCustomerUrl("/some/usr/order1");
         when(categoryService.getCustomerById(anyLong())).thenReturn(customer1);
 
         mockMvc.perform(get("/api/v1/customers/1")

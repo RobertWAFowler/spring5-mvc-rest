@@ -8,5 +8,5 @@ public class CustomerDTO {
     private Long id;
     private String firstName;
     private String lastName;
-    private String orders_url;
+    private String customerUrl;
 }

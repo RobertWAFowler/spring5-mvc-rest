@@ -53,14 +53,13 @@ public class CustomerServiceTest {
     }
 
     @Test
-    public void getCustomerByName() {
+    public void getCustomerById() {
 
         //given
         Customer customer = new Customer();
         customer.setId(ID);
         customer.setFirstName(FIRSTNAME);
         customer.setLastName(LASTNAME);
-        customer.setOrders_url(ORDER_URL);
 
         Optional<Customer> customerOptional = Optional.of(customer);
 
@@ -70,9 +69,7 @@ public class CustomerServiceTest {
         CustomerDTO customerDTO = customerService.getCustomerById(ID);
 
         //then
-//        assertEquals(ID, customerDTO.getId());
         assertEquals(FIRSTNAME, customerDTO.getFirstName());
         assertEquals(LASTNAME, customerDTO.getLastName());
-        assertEquals(ORDER_URL, customerDTO.getOrders_url());
     }
 }

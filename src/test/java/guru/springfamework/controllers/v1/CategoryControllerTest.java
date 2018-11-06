@@ -14,8 +14,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
-import static org.hamcrest.core.IsEqual.equalTo;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -38,19 +38,18 @@ public class CategoryControllerTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-//        categoryController = new CategoryController(CategoryService);
-
         mockMvc = MockMvcBuilders.standaloneSetup(categoryController).build();
+
     }
 
     @Test
     public void testListCategories() throws Exception {
         CategoryDTO category1 = new CategoryDTO();
-        category1.setId(1L);
+        category1.setId(1l);
         category1.setName(NAME);
 
         CategoryDTO category2 = new CategoryDTO();
-        category1.setId(2L);
+        category2.setId(2l);
         category2.setName("Bob");
 
         List<CategoryDTO> categories = Arrays.asList(category1, category2);
@@ -66,7 +65,7 @@ public class CategoryControllerTest {
     @Test
     public void testGetByNameCategories() throws Exception {
         CategoryDTO category1 = new CategoryDTO();
-        category1.setId(1L);
+        category1.setId(1l);
         category1.setName(NAME);
 
         when(categoryService.getCategoryByName(anyString())).thenReturn(category1);

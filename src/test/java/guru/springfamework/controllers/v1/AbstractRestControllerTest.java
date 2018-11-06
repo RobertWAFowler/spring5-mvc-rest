@@ -2,10 +2,12 @@ package guru.springfamework.controllers.v1;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class AbstractRestControllerTest {
+/**
+ * Created by jt on 9/28/17.
+ */
+public abstract class AbstractRestControllerTest {
 
     public static String asJsonString(final Object obj) {
-
         try {
             return new ObjectMapper().writeValueAsString(obj);
         } catch (Exception e) {

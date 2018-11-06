@@ -10,6 +10,7 @@ public class CategoryMapperTest {
 
     public static final String NAME = "Joe";
     public static final long ID = 1L;
+
     CategoryMapper categoryMapper = CategoryMapper.INSTANCE;
 
     @Test

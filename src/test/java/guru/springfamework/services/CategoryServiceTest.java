@@ -20,21 +20,23 @@ public class CategoryServiceTest {
 
     public static final Long ID = 2L;
     public static final String NAME = "Jimmy";
-
-    CategoryService categoryService;
+    CategoryServiceImpl categoryService;
 
     @Mock
     CategoryRepository categoryRepository;
+
 
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        categoryService = new CategoryServiceImpl(CategoryMapper.INSTANCE, categoryRepository);
+        categoryService = new CategoryServiceImpl();
+        categoryService.setCategoryMapper(CategoryMapper.INSTANCE);
+        categoryService.setCategoryRepository(categoryRepository);
     }
 
     @Test
-    public void getAllCategories() {
+    public void getAllCategories() throws Exception {
 
         //given
         List<Category> categories = Arrays.asList(new Category(), new Category(), new Category());
@@ -50,7 +52,7 @@ public class CategoryServiceTest {
     }
 
     @Test
-    public void getCategoryByName() {
+    public void getCategoryByName() throws Exception {
 
         //given
         Category category = new Category();
@@ -65,5 +67,7 @@ public class CategoryServiceTest {
         //then
         assertEquals(ID, categoryDTO.getId());
         assertEquals(NAME, categoryDTO.getName());
+
     }
+
 }

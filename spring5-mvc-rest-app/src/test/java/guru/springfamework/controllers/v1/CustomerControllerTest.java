@@ -1,6 +1,6 @@
 package guru.springfamework.controllers.v1;
 
-import guru.springfamework.api.v1.model.CustomerDTO;
+import guru.springfamework.model.CustomerDTO;
 import guru.springfamework.services.CustomerService;
 import guru.springfamework.services.ResourceNotFoundException;
 import org.junit.Before;
